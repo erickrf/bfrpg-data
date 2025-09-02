@@ -316,10 +316,6 @@ def main():
         with open(input_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        if 'monsters' not in data:
-            logger.error("No 'monsters' key found in input file")
-            sys.exit(1)
-        
         # Process each monster
         structured_monsters = {}
         logger.info(f"Processing {len(data)} monsters...")
