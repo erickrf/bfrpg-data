@@ -128,40 +128,47 @@ class MonsterPostProcessor:
         first_row = table['rows'][0]
         return len(first_row) > 2
     
-    def _extract_monster_names(self, header_row: List[str]) -> List[str]:
-        """Extract monster names from the header row of a stats table."""
-        monster_names = []
+    def _extract_column_headers(self, header_row: List[str]) -> List[str]:
+        """Extract column headers from the header row of a stats table."""
+        column_headers = []
         
         # Skip first column (attribute names), extract from columns 2+
         for i in range(1, len(header_row)):
-            name = self._clean_text(header_row[i])
-            if name:  # Only add non-empty names
-                monster_names.append(name)
+            header = self._clean_text(header_row[i])
+            # Add even empty headers to maintain column correspondence
+            column_headers.append(header if header else "")
         
-        return monster_names
+        return column_headers
     
     def _process_multi_monster_entry(self, original_name: str, monster_data: Dict, stats_table: Dict):
         """Split a multi-monster entry into individual monster entries."""
         print(f"  → Splitting multi-monster entry: {len(stats_table['rows'][0])} columns")
         
-        # Extract monster names from header row
-        monster_names = self._extract_monster_names(stats_table['rows'][0])
-        print(f"  → Found monsters: {monster_names}")
+        # Extract column headers from first row (may be subtypes like "Adult", "Male", etc.)
+        column_headers = self._extract_column_headers(stats_table['rows'][0])
+        print(f"  → Found column headers: {column_headers}")
         
-        if not monster_names:
-            print(f"  → Warning: Could not extract monster names, keeping as single entry")
+        if not column_headers:
+            print(f"  → Warning: Could not extract column headers, keeping as single entry")
             self._process_single_monster_entry(original_name, monster_data)
             return
         
         # Create individual entries for each monster
-        for i, monster_name in enumerate(monster_names):
+        for i, column_header in enumerate(column_headers):
             column_index = i + 1  # +1 because first column is attributes
+            
+            # Create safer monster name by combining original name with column header
+            if column_header.strip():
+                safe_monster_name = f"{original_name} {column_header.strip()}"
+            else:
+                safe_monster_name = f"{original_name} ({i+1})"
             
             # Create new monster data
             new_monster_data = {
                 'description_paragraphs': copy.deepcopy(monster_data.get('description_paragraphs', [])),
-                'tables': self._create_individual_stats_table(stats_table, column_index, monster_name),
-                'other_elements': copy.deepcopy(monster_data.get('other_elements', []))
+                'tables': self._create_individual_stats_table(stats_table, column_index, original_name, column_header),
+                'other_elements': copy.deepcopy(monster_data.get('other_elements', [])),
+                'split': True
             }
             
             # Add any non-stats tables to all split monsters
@@ -170,7 +177,7 @@ class MonsterPostProcessor:
                     new_monster_data['tables'].append(copy.deepcopy(table))
             
             # Use clean monster name as key
-            clean_name = self._clean_monster_name(monster_name)
+            clean_name = self._clean_monster_name(safe_monster_name)
             
             # Handle duplicate names by adding numbers
             final_name = clean_name
@@ -185,41 +192,46 @@ class MonsterPostProcessor:
     
     def _process_single_monster_entry(self, monster_name: str, monster_data: Dict):
         """Process a single monster entry (copy as-is)."""
-        self.output_monsters[monster_name] = copy.deepcopy(monster_data)
+        new_monster_data = copy.deepcopy(monster_data)
+        new_monster_data['split'] = False
+        self.output_monsters[monster_name] = new_monster_data
     
-    def _create_individual_stats_table(self, stats_table: Dict, column_index: int, monster_name: str) -> List[Dict]:
+    def _create_individual_stats_table(self, stats_table: Dict, column_index: int, original_name: str, column_header: str) -> List[Dict]:
         """Create a 2-column stats table for an individual monster."""
         if column_index >= len(stats_table['rows'][0]):
-            print(f"Warning: Column index {column_index} out of range for {monster_name}")
+            print(f"Warning: Column index {column_index} out of range for {original_name} {column_header}")
             return []
         
         # Create new table with 2 columns: attributes + monster's values
         new_rows = []
         
-        for row in stats_table['rows']:
+        for row_idx, row in enumerate(stats_table['rows']):
+            if row_idx == 0:  # Skip header row
+                continue
+                
             if len(row) > column_index:
+                # Get the value for this monster's column
+                monster_value = row[column_index].strip() if row[column_index] else ""
+                
+                # If the value is empty or missing, check if there's a shared value
+                # A shared value would be in a column with a single non-empty cell spanning multiple columns conceptually
+                if not monster_value:
+                    # Look for the first non-empty value in this row (excluding first column)
+                    for col_idx in range(1, len(row)):
+                        if row[col_idx].strip():
+                            monster_value = row[col_idx].strip()
+                            break
+                
                 # Create 2-column row: [attribute_name, monster_value]
-                if row == stats_table['rows'][0]:  # Header row
-                    # Skip header row or create a simple one
-                    continue
-                else:
-                    new_row = [row[0], row[column_index]]
-                    new_rows.append(new_row)
+                new_row = [row[0], monster_value]
+                new_rows.append(new_row)
         
         if not new_rows:
             return []
         
-        # Build HTML table
-        html_rows = []
-        for row in new_rows:
-            html_rows.append(f"<tr><td>{row[0]}</td><td>{row[1]}</td></tr>")
-        
-        html_table = f"<table>{''.join(html_rows)}</table>"
-        
         return [{
             'type': 'table',
-            'rows': new_rows,
-            'html': html_table
+            'rows': new_rows
         }]
     
     def _clean_text(self, text: str) -> str:
