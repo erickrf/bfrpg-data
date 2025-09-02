@@ -151,14 +151,7 @@ class MonsterExtractor:
         print("Validating extraction...")
         self._validate_extraction(monster_data)
         
-        return {
-            'monsters': monster_data,
-            'metadata': {
-                'total_monsters': len(monster_data),
-                'indexed_monsters': len(self.monster_names_from_index),
-                'extraction_complete': len(monster_data) == len(self.monster_names_from_index)
-            }
-        }
+        return monster_data
     
     def _load_odt(self):
         """Load and parse the ODT file."""
@@ -489,7 +482,7 @@ def main():
             json.dump(data, f, indent=2, ensure_ascii=False)
         
         print(f"✓ Monster data saved to {output_path}")
-        print(f"✓ Extracted {data['metadata']['total_monsters']} monsters")
+        print(f"✓ Extracted {len(data)} monsters")
         
         return 0
         

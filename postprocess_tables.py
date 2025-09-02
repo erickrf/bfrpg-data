@@ -322,11 +322,9 @@ def main():
         
         # Process each monster
         structured_monsters = {}
-        monsters = data['monsters']
+        logger.info(f"Processing {len(data)} monsters...")
         
-        logger.info(f"Processing {len(monsters)} monsters...")
-        
-        for monster_name, monster_data in monsters.items():
+        for monster_name, monster_data in data.items():
             structured_monster = process_monster(monster_name, monster_data)
             structured_monsters[monster_name] = structured_monster
         
@@ -335,13 +333,11 @@ def main():
             return
         
         # Write the output file
-        output_data = {'monsters': structured_monsters}
-        
         logger.info(f"Writing structured data to {output_path}...")
         indent = None if args.indent == 0 else args.indent
         
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=indent, ensure_ascii=False)
+            json.dump(structured_monsters, f, indent=indent, ensure_ascii=False)
         
         logger.info(f"Successfully processed {len(structured_monsters)} monsters")
         
