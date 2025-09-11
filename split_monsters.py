@@ -10,6 +10,7 @@ tables with more than 2 columns.
 import json
 import re
 import argparse
+import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 import copy
@@ -25,7 +26,7 @@ class MonsterPostProcessor:
         'ac:', 'hd:', 'attacks:', 'dmg:', 'mv:', 'treasure:',
     }
     
-    def __init__(self, input_file: str):
+    def __init__(self, input_file: str, skip_families: bool = True):
         self.input_file = Path(input_file)
         self.input_data = None
         self.output_monsters = {}
@@ -37,6 +38,7 @@ class MonsterPostProcessor:
             'split_monsters': 0,
             'total_output_monsters': 0
         }
+        self.skip_families = skip_families
     
     def load_input(self):
         """Load the input JSON file."""
@@ -45,20 +47,23 @@ class MonsterPostProcessor:
             self.input_data = json.load(f)
         
         self.stats['original_entries'] = len(self.input_data)
-        print(f"Loaded {self.stats['original_entries']} monster entries")
+        logging.info(f"Loaded {self.stats['original_entries']} monster entries")
     
     def process_monsters(self) -> Dict[str, Any]:
         """Process all monsters, splitting multi-monster entries."""
-        print("Processing monster entries...")
+        logging.debug("Processing monster entries...")
         
         for monster_name, monster_data in self.input_data.items():
-            print(f"Processing: {monster_name}")
+            logging.debug(f"Processing: {monster_name}")
             
             # Check if entry has any tables
             tables = monster_data.get('tables', [])
             if not tables:
                 # No tables - likely a monster family/category description
-                print(f"  → No tables found (monster family/category)")
+                logging.debug(f"  → No tables found; {monster_name} is likely a monster family")
+                if self.skip_families:
+                    continue
+
                 self._process_single_monster_entry(monster_name, monster_data)
                 self.stats['no_table_entries'] += 1
                 continue
@@ -72,7 +77,7 @@ class MonsterPostProcessor:
                 self.stats['multi_monster_entries'] += 1
             else:
                 # Single monster entry with stats - copy as-is
-                print(f"  → Single monster with stats table")
+                logging.debug(f"  → Single monster with stats table")
                 self._process_single_monster_entry(monster_name, monster_data)
                 self.stats['single_monster_entries'] += 1
         
@@ -131,14 +136,12 @@ class MonsterPostProcessor:
     
     def _process_multi_monster_entry(self, original_name: str, monster_data: Dict, stats_table: Dict):
         """Split a multi-monster entry into individual monster entries."""
-        print(f"  → Splitting multi-monster entry: {len(stats_table['rows'][0])} columns")
-        
         # Extract column headers from first row (may be subtypes like "Adult", "Male", etc.)
         column_headers = self._extract_column_headers(stats_table['rows'][0])
-        print(f"  → Found column headers: {column_headers}")
+        logging.debug(f"  → Found column headers: {column_headers}")
         
         if not column_headers:
-            print(f"  → Warning: Could not extract column headers, keeping as single entry")
+            logging.error(f"  → Warning: Could not extract column headers, keeping as single entry")
             self._process_single_monster_entry(original_name, monster_data)
             return
         
@@ -177,7 +180,7 @@ class MonsterPostProcessor:
             
             self.output_monsters[final_name] = new_monster_data
             self.stats['split_monsters'] += 1
-            print(f"  → Created: {final_name}")
+            logging.info(f"  → Created: {final_name}")
     
     def _process_single_monster_entry(self, monster_name: str, monster_data: Dict):
         """Process a single monster entry (copy as-is)."""
@@ -265,38 +268,33 @@ def main():
                         help='Output JSON file (default: monsters_split.json)')
     parser.add_argument('--stats', action='store_true',
                         help='Show detailed statistics')
-    
+    parser.add_argument('--keep-families', action='store_true',
+                        help='Keep monster families (i.e. "Bear" or "Dragon")')
+
     args = parser.parse_args()
-    
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(message)s'
+    )
+
     # Check if input exists
     input_path = Path(args.input)
     if not input_path.exists():
         print(f"Error: Input file not found: {input_path}")
         return 1
-    
-    try:
-        # Process monsters
-        processor = MonsterPostProcessor(args.input)
-        processor.load_input()
-        
-        output_data = processor.process_monsters()
-        
-        # Save output
-        output_path = Path(args.output)
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=2, ensure_ascii=False)
-        
-        processor.print_stats()
-        print(f"\n✓ Processed monsters saved to {output_path}")
-        
-        return 0
-        
-    except Exception as e:
-        print(f"Error during processing: {e}")
-        import traceback
-        traceback.print_exc()
-        return 1
+
+    processor = MonsterPostProcessor(args.input, skip_families=not args.keep_families)
+    processor.load_input()
+    output_data = processor.process_monsters()
+
+    # Save output
+    output_path = Path(args.output)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
+
+    processor.print_stats()
+    print(f"\n✓ Processed monsters saved to {output_path}")
 
 
 if __name__ == '__main__':
-    exit(main())
+    main()
