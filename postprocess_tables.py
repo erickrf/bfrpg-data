@@ -10,7 +10,7 @@ import logging
 import argparse
 import sys
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, Optional
 
 # Expected stats and their variations
 EXPECTED_STATS = {
