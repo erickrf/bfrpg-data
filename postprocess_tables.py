@@ -1,84 +1,94 @@
 import argparse
 import json
+import logging
+
+import utils
 
 # some replacements for matching all keys
-stat_name_replacements = {
-    'Treasure': 'Treasure Type',
-    'Movements': 'Movement',
-    'Save as': 'Save As',
-    'No of Attacks': 'No. of Attacks',
-    'No. of Attack': 'No. of Attacks',
-    'No Appearing': 'No. Appearing',
-    'Attacks': 'No. of Attacks',
-    'Armour Class': 'Armor Class',
-    'XP value': 'XP',
-    'XP Value': 'XP'
+STAT_NAME_REPLACEMENTS = {
+    "Treasure": "Treasure Type",
+    "Movements": "Movement",
+    "Save as": "Save As",
+    "No of Attacks": "No. of Attacks",
+    "No. of Attack": "No. of Attacks",
+    "No Appearing": "No. Appearing",
+    "Attacks": "No. of Attacks",
+    "Armour Class": "Armor Class",
+    "XP value": "XP",
+    "XP Value": "XP",
 }
 
-class Processor:
-    def __init__(self, expected_stats=None):
-        self.multitable = 0
-        self.expected_stats = expected_stats
+EXPECTED_STATS = {
+    "Armor Class",
+    "Movement",
+    "XP",
+    "Save As",
+    "Morale",
+    "Damage",
+    "Hit Dice",
+    "Treasure Type",
+    "No. of Attacks",
+    "No. Appearing",
+}
 
-    def extract_stats(self, item: dict, name: str):
-        tables = item['tables']
+
+def extract_stats(rows: list[str]):
+    """
+    Extract the stats of the given monster.
+    """
+    stats = {}
+
+    for key, value in rows:
+        # special treatment to some noisy cases like "Save As: Figher:"
+        if key.startswith("Save") and key.count(":") == 2:
+            key, save_class = key.split(":", 1)
+
+            # fix value to "Fighter: xx"
+            value = save_class + value
+
+        key = key.strip(": ")
+        key = STAT_NAME_REPLACEMENTS.get(key, key)
+
+        stats[key] = value
+
+    return stats
+
+
+def process_file(filename: str):
+    """
+    Process one file
+    """
+    with open(filename) as f:
+        data = json.load(f)
+
+    result = {}
+
+    for monster, monster_data in data.items():
+        tables = monster_data["tables"]
 
         if len(tables) > 1:
-            self.multitable += 1
-            print(f'{name} has multiple tables')
+            logging.info(f"{monster} has multiple tables; adding extra tables as HTML.")
+            # first table contain stats
+            for table in tables[1:]:
+                monster_data["description_paragraphs"].append(table["html"])
 
-        rows = tables[0]['rows']
-        stats = []
-        values = []
-        try:
-            for stat, value in rows:
-                # special treatment to some noisy cases like "Save As: Figher:"
-                if stat.startswith('Save') and stat.count(':') == 2:
-                    stat, save_class = stat.split(':', 1)
+        stat_table = tables[0]["rows"]
+        stats = extract_stats(stat_table)
+        stat_names = stats.keys()
 
-                    # fix value to "Fighter: xx"
-                    value = save_class + value
+        missing = EXPECTED_STATS - stat_names
+        additional = stat_names - EXPECTED_STATS
 
-                stat = stat.strip(': ')
-                stat = stat_name_replacements.get(stat, stat)
+        if missing:
+            logging.info(f"{monster} is missing {missing}")
 
-                stats.append(stat)
-                values.append(value)
+        if additional:
+            logging.info(f"{monster} has additional stats: {additional}")
 
-        except ValueError:
-            print(f'Unexpected data in {name}: {rows}')
-            return [], []
+        result[monster] = stats
+        result[monster]["description"] = monster_data["description_paragraphs"]
 
-        return stats, values
-
-    def process_file(self, filename: str):
-        """
-        Process one file
-        """
-        with open(filename) as f:
-            data = json.load(f)
-
-        result = {}
-
-        for monster, monster_data in data.items():
-            stats, values = self.extract_stats(monster_data, monster)
-            stats = set(stats)
-
-            if self.expected_stats is None:
-                self.expected_stats = set(stats)
-            else:
-                missing = self.expected_stats - stats
-                additional = stats - self.expected_stats
-
-                if missing:
-                    print(f'{monster} is missing {missing}')
-
-                if additional:
-                    print(f'{monster} has additional stats: {additional}')
-
-            result[monster] = {s: v for s, v in zip(stats, values)}
-
-        return result
+    return result
 
 
 def main():
@@ -87,6 +97,13 @@ def main():
     parser.add_argument("output_file", help="Output JSON file")
     args = parser.parse_args()
 
+    utils.setup_logging()
 
-if __name__ == '__main__':
+    monsters = process_file(args.input_file)
+
+    with open(args.output_file, "w") as f:
+        json.dump(monsters, f, indent=2, ensure_ascii=False)
+
+
+if __name__ == "__main__":
     main()

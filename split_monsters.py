@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 import copy
 
+import utils
+
 
 class MonsterPostProcessor:
     """Post-processes monster JSON to split multi-monster entries."""
@@ -268,10 +270,7 @@ def main():
                         help='Keep monster families (i.e. "Bear" or "Dragon")')
 
     args = parser.parse_args()
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(message)s'
-    )
+    utils.setup_logging()
 
     # Check if input exists
     input_path = Path(args.input)
