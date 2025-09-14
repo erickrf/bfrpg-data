@@ -157,8 +157,8 @@ class MonsterPostProcessor:
             
             # Create new monster data
             new_monster_data = {
-                'description_paragraphs': copy.deepcopy(monster_data.get('description_paragraphs', [])),
-                'tables': self._create_individual_stats_table(stats_table, column_index, original_name, column_header),
+                'description_paragraphs': monster_data.get('description_paragraphs', []),
+                'tables': self._create_individual_stats_table(stats_table, column_index),
                 'other_elements': copy.deepcopy(monster_data.get('other_elements', [])),
                 'split': True
             }
@@ -188,35 +188,31 @@ class MonsterPostProcessor:
         new_monster_data['split'] = False
         self.output_monsters[monster_name] = new_monster_data
     
-    def _create_individual_stats_table(self, stats_table: Dict, column_index: int, original_name: str, column_header: str) -> List[Dict]:
+    def _create_individual_stats_table(self, stats_table: Dict, column_index: int) -> List[Dict]:
         """Create a 2-column stats table for an individual monster."""
-        if column_index >= len(stats_table['rows'][0]):
-            print(f"Warning: Column index {column_index} out of range for {original_name} {column_header}")
-            return []
-        
         # Create new table with 2 columns: attributes + monster's values
         new_rows = []
         
         for row_idx, row in enumerate(stats_table['rows']):
             if row_idx == 0:  # Skip header row
                 continue
-                
+
+            monster_value = None
             if len(row) > column_index:
                 # Get the value for this monster's column
                 monster_value = row[column_index].strip() if row[column_index] else ""
                 
-                # If the value is empty or missing, check if there's a shared value
-                # A shared value would be in a column with a single non-empty cell spanning multiple columns conceptually
-                if not monster_value:
-                    # Look for the first non-empty value in this row (excluding first column)
-                    for col_idx in range(1, len(row)):
-                        if row[col_idx].strip():
-                            monster_value = row[col_idx].strip()
-                            break
+            # If the value is empty or missing, check if there's a shared value
+            # A shared value would be in a column with a single non-empty cell spanning multiple columns conceptually
+            if not monster_value:
+                if len(row) == 2:
+                    monster_value = row[1].strip()
+                else:
+                    logging.error(f'Value missing for monster')
                 
-                # Create 2-column row: [attribute_name, monster_value]
-                new_row = [row[0], monster_value]
-                new_rows.append(new_row)
+            # Create 2-column row: [attribute_name, monster_value]
+            new_row = [row[0], monster_value]
+            new_rows.append(new_row)
         
         if not new_rows:
             return []

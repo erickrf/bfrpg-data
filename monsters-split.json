@@ -878,16 +878,40 @@
         "type": "table",
         "rows": [
           [
+            "Armor Class:",
+            "– 19 (underside 17) –"
+          ],
+          [
             "Hit Dice:",
             "2* or 3*"
           ],
           [
+            "No. of Attacks:",
+            "– 1 bite + hold or 1 spit –"
+          ],
+          [
             "Damage:",
-            "2d6 + 1d4/roundor 2d8 (acid)"
+            "2d6 + 1d4/round or 2d8 (acid)"
+          ],
+          [
+            "Movement:",
+            "– 120' Burrow 60' –"
+          ],
+          [
+            "No. Appearing:",
+            "– 1d6 –"
           ],
           [
             "Save As:",
             "Fighter: 2 or 3(same as Hit Dice)"
+          ],
+          [
+            "Treasure",
+            "– C –"
+          ],
+          [
+            "Morale",
+            "7"
           ],
           [
             "XP",
@@ -1467,12 +1491,24 @@
         "type": "table",
         "rows": [
           [
+            "Armor Class:",
+            "– 13 –"
+          ],
+          [
             "Hit Dice:",
             "3"
           ],
           [
+            "No. of Attacks:",
+            "– 1 maul –"
+          ],
+          [
             "Damage:",
             "1d6"
+          ],
+          [
+            "Movement:",
+            "– 40' –"
           ],
           [
             "No. Appearing:",
@@ -1481,6 +1517,14 @@
           [
             "Save As:",
             "Fighter: 3"
+          ],
+          [
+            "Morale:",
+            "– 8 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -4043,12 +4087,24 @@
             "By weapon +6"
           ],
           [
+            "Movement:",
+            "– 30' –"
+          ],
+          [
+            "No. Appearing:",
+            "– 1 –"
+          ],
+          [
             "Save As:",
             "Fighter: 12"
           ],
           [
             "Morale:",
             "10"
+          ],
+          [
+            "Treasure Type:",
+            "– Special –"
           ],
           [
             "XP:",
@@ -4650,6 +4706,10 @@
             "12* (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– 2 claws or 1 sting –"
+          ],
+          [
             "Damage:",
             "1d10+4 claw or 1d6+poison sting"
           ],
@@ -4664,6 +4724,14 @@
           [
             "Save As:",
             "Cleric: 12"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -7357,12 +7425,32 @@
             "12 (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– 3 bludgeon –"
+          ],
+          [
             "Damage:",
             "1d8"
           ],
           [
+            "Movement:",
+            "– 10' Jump 60' –"
+          ],
+          [
+            "No. Appearing:",
+            "– 1d3 –"
+          ],
+          [
             "Save As: Fighter:",
             "12"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -7388,12 +7476,32 @@
             "18 (+12)"
           ],
           [
+            "No. of Attacks:",
+            "– 3 bludgeon –"
+          ],
+          [
             "Damage:",
             "2d8"
           ],
           [
+            "Movement:",
+            "– 10' Jump 60' –"
+          ],
+          [
+            "No. Appearing:",
+            "– 1d3 –"
+          ],
+          [
             "Save As: Fighter:",
             "18"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -12084,8 +12192,16 @@
             "9** (+8)"
           ],
           [
+            "No. of Attacks:",
+            "2 tusks, 1 stomp or breath (steam cloud)"
+          ],
+          [
             "Damage:",
             "1d8 tusk, 3d8 stomp, 9d8 breath"
+          ],
+          [
+            "Movement:",
+            "– 30' Fly 60' (15') <strong>– </strong>"
           ],
           [
             "No. Appearing:",
@@ -12986,12 +13102,32 @@
             "12* (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– 2 fists –"
+          ],
+          [
             "Damage",
             "1d8 fist"
           ],
           [
+            "Movement:",
+            "– 30' (10') –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 12"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13021,12 +13157,32 @@
             "16* (+12)"
           ],
           [
+            "No. of Attacks:",
+            "– 2 fists –"
+          ],
+          [
             "Damage",
             "1d8 fist"
           ],
           [
+            "Movement:",
+            "– 30' (10') –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 16"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13109,12 +13265,32 @@
             "12* (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– 1 punch or stomp + special –"
+          ],
+          [
             "Damage:",
             "2d8"
           ],
           [
+            "Movement:",
+            "– 40' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 12"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13143,12 +13319,32 @@
             "16* (+12)"
           ],
           [
+            "No. of Attacks:",
+            "– 1 punch or stomp + special –"
+          ],
+          [
             "Damage:",
             "3d6"
           ],
           [
+            "Movement:",
+            "– 40' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 16"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13231,12 +13427,32 @@
             "12* (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– special –"
+          ],
+          [
             "Damage:",
             "2d8"
           ],
           [
+            "Movement:",
+            "– Fly 120' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 12"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13265,12 +13481,32 @@
             "16* (+12)"
           ],
           [
+            "No. of Attacks:",
+            "– special –"
+          ],
+          [
             "Damage:",
             "3d6"
           ],
           [
+            "Movement:",
+            "– Fly 120' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 16"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13353,12 +13589,32 @@
             "12* (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– 1 punch, stomp, or special –"
+          ],
+          [
             "Damage:",
             "2d8"
           ],
           [
+            "Movement:",
+            "– 30' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 12"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13387,12 +13643,32 @@
             "16* (+12)"
           ],
           [
+            "No. of Attacks:",
+            "– 1 punch, stomp, or special –"
+          ],
+          [
             "Damage:",
             "3d6"
           ],
           [
+            "Movement:",
+            "– 30' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 16"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13475,12 +13751,32 @@
             "12* (+10)"
           ],
           [
+            "No. of Attacks:",
+            "– 1 punch or stomp –"
+          ],
+          [
             "Damage:",
             "2d8"
           ],
           [
+            "Movement:",
+            "– 40' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 12"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -13509,12 +13805,32 @@
             "16* (+12)"
           ],
           [
+            "No. of Attacks:",
+            "– 1 punch or stomp –"
+          ],
+          [
             "Damage:",
             "3d6"
           ],
           [
+            "Movement:",
+            "– 40' –"
+          ],
+          [
+            "No. Appearing:",
+            "– special –"
+          ],
+          [
             "Save As:",
             "Fighter: 16"
+          ],
+          [
+            "Morale:",
+            "– 10 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -14745,6 +15061,10 @@
             "3 to 6"
           ],
           [
+            "No. of Attacks:",
+            "– 1 bite plus spines (special) –"
+          ],
+          [
             "Damage:",
             "2d6 bite plus poison"
           ],
@@ -14753,8 +15073,20 @@
             "Swim 40'"
           ],
           [
+            "No. Appearing:",
+            "– 2d4 –"
+          ],
+          [
             "Save As:",
             "Fighter: 3 to 6 (same as Hit Dice)"
+          ],
+          [
+            "Morale:",
+            "– 7 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -14785,6 +15117,10 @@
             "7 to 8"
           ],
           [
+            "No. of Attacks:",
+            "– 1 bite plus spines (special) –"
+          ],
+          [
             "Damage:",
             "3d6 bite plus poison"
           ],
@@ -14793,8 +15129,20 @@
             "Swim 40'"
           ],
           [
+            "No. Appearing:",
+            "– 2d4 –"
+          ],
+          [
             "Save As:",
             "Fighter: 7 to 8 (same as Hit Dice)"
+          ],
+          [
+            "Morale:",
+            "– 7 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -15555,6 +15903,14 @@
             "2*"
           ],
           [
+            "No. of Attacks:",
+            "– 1 to 4 (see below) –"
+          ],
+          [
+            "Damage:",
+            "– Special –"
+          ],
+          [
             "Movement:",
             "10'"
           ],
@@ -15565,6 +15921,14 @@
           [
             "Save as:",
             "Fighter: 2"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -15594,6 +15958,14 @@
             "3*"
           ],
           [
+            "No. of Attacks:",
+            "– 1 to 4 (see below) –"
+          ],
+          [
+            "Damage:",
+            "– Special –"
+          ],
+          [
             "Movement:",
             "10'"
           ],
@@ -15604,6 +15976,14 @@
           [
             "Save as:",
             "Fighter: 3"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -15633,6 +16013,14 @@
             "4*"
           ],
           [
+            "No. of Attacks:",
+            "– 1 to 4 (see below) –"
+          ],
+          [
+            "Damage:",
+            "– Special –"
+          ],
+          [
             "Movement:",
             "None"
           ],
@@ -15643,6 +16031,14 @@
           [
             "Save as:",
             "Fighter: 4"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -17080,12 +17476,28 @@
             "2"
           ],
           [
+            "No. of Attacks:",
+            "– 1 –"
+          ],
+          [
+            "Damage:",
+            "– 1d4 + entangle –"
+          ],
+          [
+            "Movement:",
+            "– 0' –"
+          ],
+          [
             "No. Appearing:",
             "1d8-1"
           ],
           [
             "Save As:",
             "Fighter: 2"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
           ],
           [
             "Treasure Type:",
@@ -17242,16 +17654,32 @@
             "2**"
           ],
           [
+            "No. of Attacks:",
+            "– 2 claws, 1 bite –"
+          ],
+          [
             "Damage:",
             "1d4 claws, 1d4 bite, + paralysis (1d4+1 per day), poison"
+          ],
+          [
+            "Movement:",
+            "– Swim 30' –"
           ],
           [
             "No. Appearing:",
             "1, Wild 1, Lair 1d4"
           ],
           [
+            "Save As:",
+            "– Fighter: 2 –"
+          ],
+          [
             "Morale:",
             "7"
+          ],
+          [
+            "Treasure Type:",
+            "– C –"
           ],
           [
             "XP:",
@@ -18823,8 +19251,24 @@
             "by weapon"
           ],
           [
+            "Movement:",
+            "– 30' –"
+          ],
+          [
+            "No. Appearing:",
+            "– Wild 3d8, Lair 8d10 –"
+          ],
+          [
             "Save As:",
             "Fighter: 6"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– U, Lair G and H –"
           ],
           [
             "XP:",
@@ -18865,8 +19309,24 @@
             "4d6"
           ],
           [
+            "Movement:",
+            "– 30' –"
+          ],
+          [
+            "No. Appearing:",
+            "– Wild 3d8, Lair 8d10 –"
+          ],
+          [
             "Save As:",
             "Fighter: 14"
+          ],
+          [
+            "Morale:",
+            "– 12 –"
+          ],
+          [
+            "Treasure Type:",
+            "– U, Lair G and H –"
           ],
           [
             "XP:",
@@ -23186,6 +23646,10 @@
             "9"
           ],
           [
+            "Treasure Type:",
+            "– C in Lair –"
+          ],
+          [
             "XP:",
             "125"
           ]
@@ -23678,12 +24142,20 @@
             "Swim 40'"
           ],
           [
+            "No. Appearing:",
+            "– 1d4 –"
+          ],
+          [
             "Save As:",
             "Fighter: 5"
           ],
           [
             "Morale:",
             "12"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
@@ -25438,12 +25910,24 @@
         "type": "table",
         "rows": [
           [
+            "Armor Class:",
+            "– 15 –"
+          ],
+          [
             "Hit Dice:",
             "4+4"
           ],
           [
+            "No. of Attacks:",
+            "– 1 bite –"
+          ],
+          [
             "Damage:",
             "1d8"
+          ],
+          [
+            "Movement:",
+            "– 30' Swim 50' –"
           ],
           [
             "No. Appearing:",
@@ -25456,6 +25940,10 @@
           [
             "Morale:",
             "8"
+          ],
+          [
+            "Treasure Type:",
+            "– None* –"
           ],
           [
             "XP:",
@@ -25704,6 +26192,42 @@
           [
             "Armor Class:",
             "N/A"
+          ],
+          [
+            "Hit Dice:",
+            "– 2* –"
+          ],
+          [
+            "No. of Attacks:",
+            "– 1 –"
+          ],
+          [
+            "Damage:",
+            "– Special –"
+          ],
+          [
+            "Movement:",
+            "– None –"
+          ],
+          [
+            "No. Appearing:",
+            "– N/A –"
+          ],
+          [
+            "Save As:",
+            "– Fighter: 2 –"
+          ],
+          [
+            "Morale:",
+            "– 7 –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
+          ],
+          [
+            "XP:",
+            "– 100 –"
           ]
         ]
       }
@@ -27552,16 +28076,36 @@
         "type": "table",
         "rows": [
           [
+            "Armor Class:",
+            "– 20 body / 18 main eye / 13 eye stalks –"
+          ],
+          [
             "Hit Dice:",
             "13** (+10)"
+          ],
+          [
+            "No. of Attacks:",
+            "– 1 bite –"
           ],
           [
             "Damage:",
             "2d4 bite"
           ],
           [
+            "Movement:",
+            "– Fly 20' –"
+          ],
+          [
+            "No. Appearing:",
+            "– 1–"
+          ],
+          [
             "Save As:",
             "Fighter: 13"
+          ],
+          [
+            "Morale:",
+            "– 7 –"
           ],
           [
             "Treasure Type:",
@@ -30665,7 +31209,7 @@
           ],
           [
             "Treasure:",
-            "A"
+            ""
           ],
           [
             "XP:",
@@ -30723,7 +31267,7 @@
           ],
           [
             "Treasure:",
-            "A"
+            ""
           ],
           [
             "XP:",
@@ -32212,8 +32756,16 @@
             "6**"
           ],
           [
+            "No. of Attacks:",
+            "– 1 bite or 1 weapon –"
+          ],
+          [
             "Damage:",
             "1d6 bite + poison,or by weapon type"
+          ],
+          [
+            "Movement:",
+            "– 20' –"
           ],
           [
             "No. Appearing:",
@@ -32428,6 +32980,10 @@
           [
             "Hit Dice:",
             "3**"
+          ],
+          [
+            "No. of Attacks:",
+            "– 2 slam + constrict –"
           ],
           [
             "Damage:",
@@ -39045,12 +39601,24 @@
             "1d6 bite"
           ],
           [
+            "Movement:",
+            "– 50' –"
+          ],
+          [
             "No. Appearing:",
             "1d4, Pack 1d6"
           ],
           [
             "Save As:",
             "Fighter: 4"
+          ],
+          [
+            "Morale:",
+            "– 7 –"
+          ],
+          [
+            "Treasure Type:",
+            "– U in lair only –"
           ],
           [
             "XP:",
@@ -39192,6 +39760,10 @@
             "4"
           ],
           [
+            "No. of Attacks:",
+            "– 2 claws, 1 bite –"
+          ],
+          [
             "Damage:",
             "2d4 claw, 1d6+2 bite"
           ],
@@ -39200,8 +39772,20 @@
             "40’ Climb 20’ Burrow 2'"
           ],
           [
+            "No. Appearing:",
+            "– 1 –"
+          ],
+          [
             "Save As:",
             "Fighter: 4"
+          ],
+          [
+            "Morale:",
+            "– 9 or 12 (see below) –"
+          ],
+          [
+            "Treasure Type:",
+            "– None –"
           ],
           [
             "XP:",
