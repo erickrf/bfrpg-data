@@ -7370,6 +7370,10 @@
         "type": "table",
         "rows": [
           [
+            "Armor Class:",
+            "14"
+          ],
+          [
             "Hit Dice:",
             "6"
           ],
@@ -7421,6 +7425,10 @@
         "type": "table",
         "rows": [
           [
+            "Armor Class:",
+            "17"
+          ],
+          [
             "Hit Dice:",
             "12 (+10)"
           ],
@@ -7471,6 +7479,10 @@
       {
         "type": "table",
         "rows": [
+          [
+            "Armor Class:",
+            "20"
+          ],
           [
             "Hit Dice:",
             "18 (+12)"
@@ -31146,7 +31158,7 @@
             "Fighter: 9"
           ],
           [
-            "Morale: 7",
+            "Morale:",
             "7"
           ],
           [
@@ -31204,7 +31216,7 @@
             "Fighter: 4"
           ],
           [
-            "Morale: 7",
+            "Morale:",
             "7"
           ],
           [
@@ -31262,7 +31274,7 @@
             "Fighter: 1"
           ],
           [
-            "Morale: 7",
+            "Morale:",
             "7"
           ],
           [
@@ -31658,8 +31670,8 @@
             "Fighter: 10 to Fighter: 12 (as hit dice)"
           ],
           [
-            "Morale: 9",
-            ""
+            "Morale:",
+            "9"
           ],
           [
             "Treasure Type:",
