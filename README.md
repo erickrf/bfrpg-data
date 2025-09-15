@@ -14,6 +14,7 @@ The scripts were written for the [Field Guide Omnibus r4](https://basicfantasy.o
 ## Scripts
 
 - `extract_monsters.py` extracts a rough JSON file from the Field Guide
+- `extract_monsters_core.py` extracts a similar JSON from the Core Rules
 - `split_monsters.py` splits multiple monsters that are grouped together in the Field Guide's descriptions and tables
   - The naming patterns used in the Field Guide is not so consistent, so it is not possible to automatize the splitting of monsters
     while still producing meaningful names like _Wolf, Winter_ and _Blade Spirit Common_. Therefore, I manually fixed some resulting 
