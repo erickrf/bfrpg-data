@@ -1,8 +1,11 @@
 import argparse
 import json
 import logging
+import re
 
 import utils
+
+logger = logging.getLogger(__file__)
 
 # some replacements for matching all keys
 STAT_NAME_REPLACEMENTS = {
@@ -54,9 +57,36 @@ def extract_stats(rows: list[str]):
     return stats
 
 
+def split_attacks(damage: str, verbose: bool = False) -> list[str]:
+    """
+    Split the damage description into multiple ones.
+    """
+    final_components = []
+    parts = damage.split(",")
+
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+
+        # safely split on "or" as an isolate word
+        subparts = re.split(r"(^|\b)or\b", part)
+        for subpart in subparts:
+            subpart = subpart.strip()
+            if not subpart:
+                continue
+
+            if verbose and not re.search(r"\dd\d", subpart):
+                logger.info(f"No dice formula found in {subpart}")
+
+            final_components.append(subpart)
+
+    return final_components
+
+
 def process_file(filename: str):
     """
-    Process one file
+    Process one file extracting structured data from the tables.
     """
     with open(filename) as f:
         data = json.load(f)
@@ -67,7 +97,7 @@ def process_file(filename: str):
         tables = monster_data["tables"]
 
         if len(tables) > 1:
-            logging.info(f"{monster} has multiple tables; adding extra tables as HTML.")
+            logger.info(f"{monster} has multiple tables; adding extra tables as HTML.")
             # first table contain stats
             for table in tables[1:]:
                 monster_data["description_paragraphs"].append(table["html"])
@@ -80,10 +110,13 @@ def process_file(filename: str):
         additional = stat_names - EXPECTED_STATS
 
         if missing:
-            logging.info(f"{monster} is missing {missing}")
+            logger.info(f"{monster} is missing {missing}")
 
         if additional:
-            logging.info(f"{monster} has additional stats: {additional}")
+            logger.info(f"{monster} has additional stats: {additional}")
+
+        if "Damage" in stats:
+            stats["Damage"] = split_attacks(stats["Damage"], verbose=True)
 
         result[monster] = stats
         result[monster]["description"] = monster_data["description_paragraphs"]
