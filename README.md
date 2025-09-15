@@ -18,6 +18,8 @@ The scripts were written for the [Field Guide Omnibus r4](https://basicfantasy.o
   - The naming patterns used in the Field Guide is not so consistent, so it is not possible to automatize the splitting of monsters
     while still producing meaningful names like _Wolf, Winter_ and _Blade Spirit Common_. Therefore, I manually fixed some resulting 
     names in the file `monsters-split.json`.
+- `postprocess_tables.py` reads the JSON file generated in the previous step and extracts monster stats from the tables.
+  It takes care of spelling inconsistencies and warns about missing or extra stats. Its outputs are saved in the file `monsters-final-stats.json`.
 
 # License
 
