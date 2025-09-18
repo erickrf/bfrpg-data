@@ -116,7 +116,7 @@ def process_file(filename: str):
             logger.info(f"{monster} has additional stats: {additional}")
 
         if "Damage" in stats:
-            stats["Damage"] = split_attacks(stats["Damage"], verbose=True)
+            stats["Damage"] = split_attacks(stats["Damage"])
 
         result[monster] = stats
         result[monster]["description"] = monster_data["description_paragraphs"]
