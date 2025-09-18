@@ -7364,7 +7364,7 @@
     "other_elements": [],
     "split": false
   },
-  "Corpse Abomination, 14": {
+  "Corpse Abomination, 6 HD": {
     "description_paragraphs": [
       "A Corpse Abomination announces itself by the constant chorus of wailing produced by the many trapped souls, followed soon by a powerful stench. Anyone within 40 feet must save vs. Poison to avoid a -2 on all rolls. Composed of an amalgamation of rotting flesh and desiccated bones held together with sticky chunks of clay, this huge ball of undead bodies slowly rolls or crawls towards its victims. Limbs and torsos reach out in all directions to bludgeon anyone within 10 feet of its churning mass. With sudden speed that belies its shambling gate, a corpse abomination may compress and leap up to 60 feet, a behavior known to take many adventurers unaware.",
       "Scholars speculate these horrors form when the bodies of the dead are not separated properly before being reanimated, such as in the context of a mass grave. Corpse abominations vary in size from 8 to 20 feet across, with a corresponding difference in HD. Clerics find those with 6 HD may be Turned while the larger variety are virtually unstoppable."
@@ -7373,6 +7373,10 @@
       {
         "type": "table",
         "rows": [
+          [
+            "Armor Class:",
+            "14"
+          ],
           [
             "Hit Dice:",
             "6"
@@ -7415,7 +7419,7 @@
     "other_elements": [],
     "split": true
   },
-  "Corpse Abomination, 17": {
+  "Corpse Abomination, 12 HD": {
     "description_paragraphs": [
       "A Corpse Abomination announces itself by the constant chorus of wailing produced by the many trapped souls, followed soon by a powerful stench. Anyone within 40 feet must save vs. Poison to avoid a -2 on all rolls. Composed of an amalgamation of rotting flesh and desiccated bones held together with sticky chunks of clay, this huge ball of undead bodies slowly rolls or crawls towards its victims. Limbs and torsos reach out in all directions to bludgeon anyone within 10 feet of its churning mass. With sudden speed that belies its shambling gate, a corpse abomination may compress and leap up to 60 feet, a behavior known to take many adventurers unaware.",
       "Scholars speculate these horrors form when the bodies of the dead are not separated properly before being reanimated, such as in the context of a mass grave. Corpse abominations vary in size from 8 to 20 feet across, with a corresponding difference in HD. Clerics find those with 6 HD may be Turned while the larger variety are virtually unstoppable."
@@ -7424,6 +7428,10 @@
       {
         "type": "table",
         "rows": [
+          [
+            "Armor Class:",
+            "17"
+          ],
           [
             "Hit Dice:",
             "12 (+10)"
@@ -7466,7 +7474,7 @@
     "other_elements": [],
     "split": true
   },
-  "Corpse Abomination, 20": {
+  "Corpse Abomination, 18 HD": {
     "description_paragraphs": [
       "A Corpse Abomination announces itself by the constant chorus of wailing produced by the many trapped souls, followed soon by a powerful stench. Anyone within 40 feet must save vs. Poison to avoid a -2 on all rolls. Composed of an amalgamation of rotting flesh and desiccated bones held together with sticky chunks of clay, this huge ball of undead bodies slowly rolls or crawls towards its victims. Limbs and torsos reach out in all directions to bludgeon anyone within 10 feet of its churning mass. With sudden speed that belies its shambling gate, a corpse abomination may compress and leap up to 60 feet, a behavior known to take many adventurers unaware.",
       "Scholars speculate these horrors form when the bodies of the dead are not separated properly before being reanimated, such as in the context of a mass grave. Corpse abominations vary in size from 8 to 20 feet across, with a corresponding difference in HD. Clerics find those with 6 HD may be Turned while the larger variety are virtually unstoppable."
@@ -7475,6 +7483,10 @@
       {
         "type": "table",
         "rows": [
+          [
+            "Armor Class:",
+            "20"
+          ],
           [
             "Hit Dice:",
             "18 (+12)"
