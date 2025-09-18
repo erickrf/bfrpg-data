@@ -9,7 +9,9 @@ Its main purpose is to generate data compatible with Foundry VTT.
 
 ## Input File
 
-The scripts were written for the [Field Guide Omnibus r4](https://basicfantasy.org/downloads.html) file. Hopefully future versions will still be compatible.
+The scripts were written for the [Field Guide Omnibus r4](https://basicfantasy.org/downloads.html) file and the [Core Rules 4th Edition](https://basicfantasy.org/downloads.html). 
+
+Hopefully future versions will still be compatible.
 
 ## Scripts
 
