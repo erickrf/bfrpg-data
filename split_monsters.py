@@ -12,10 +12,12 @@ import re
 import argparse
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Any, Tuple
+from typing import Dict, List, Optional, Any
 import copy
 
 import utils
+
+from split_renames import mappings
 
 
 class MonsterPostProcessor:
@@ -167,7 +169,6 @@ class MonsterPostProcessor:
         for i, column_header in enumerate(column_headers):
             column_index = i + 1  # +1 because first column is attributes
 
-            # Create safer monster name by combining original name with column header
             if column_header.strip():
                 safe_monster_name = f"{original_name} {column_header.strip()}"
             else:
@@ -193,8 +194,10 @@ class MonsterPostProcessor:
             # Use clean monster name as key
             clean_name = self._clean_monster_name(safe_monster_name)
 
+            # map known concatenations
+            final_name = mappings[clean_name]
+
             # Handle duplicate names by adding numbers
-            final_name = clean_name
             counter = 2
             while final_name in self.output_monsters:
                 final_name = f"{clean_name} ({counter})"
@@ -259,7 +262,7 @@ class MonsterPostProcessor:
         clean = self._clean_text(name)
 
         # Remove common formatting artifacts
-        clean = clean.replace("*", "").replace("**", "")
+        clean = clean.replace("*", "").replace("**", "").strip()
 
         return clean.strip()
 
