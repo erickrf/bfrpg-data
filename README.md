@@ -25,6 +25,9 @@ Hopefully future versions will still be compatible.
     names in the file `monsters-split.json`.
 - `postprocess_tables.py` reads the JSON file generated in the previous step and extracts monster stats from the tables.
   It takes care of spelling inconsistencies and warns about missing or extra stats. Its outputs are saved in the file `monsters-final-stats.json`.
+- `create_foundry_monsters.py` creates individual JSON files that can later be imported to 
+  Foundry with `fvtt`.
+
 
 # License
 
