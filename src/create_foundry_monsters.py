@@ -10,9 +10,11 @@ import uuid
 from pathlib import Path
 from typing import Any
 
+import utils
+
 
 # Set up logging
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+utils.setup_logging()
 logger = logging.getLogger(__name__)
 
 
@@ -38,7 +40,7 @@ def generate_foundry_data(name, data) -> dict[str, Any]:
         hd_mod = 0
 
     # the file format requires these values
-    _id = uuid.uuid4().hex[:16]
+    _id = utils.generate_foundry_id()
     key = f"!actors!{_id}"
 
     foundry_data = {

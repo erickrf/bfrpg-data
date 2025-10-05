@@ -15,6 +15,8 @@ Hopefully future versions will still be compatible.
 
 ## Scripts
 
+### Monsters
+
 - `extract_monsters.py` extracts a rough JSON file from the Field Guide
 - `extract_monsters_core.py` extracts a similar JSON from the Core Rules
 - To merge both extracted pdfs, use `jq -s 'map(keys) | .[0] - (.[0] - .[1])'  monsters-field-guide.json monsters-rulebook.json`
@@ -28,6 +30,10 @@ Hopefully future versions will still be compatible.
 - `create_foundry_monsters.py` creates individual JSON files that can later be imported to 
   Foundry with `fvtt`.
 
+### Supplement Spells
+
+- `extract_supplement_spells.py`; tested only with necromancer
+- `create_foundry_spells.py` generates files to be imported to a compendium
 
 # License
 

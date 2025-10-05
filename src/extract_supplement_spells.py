@@ -19,19 +19,20 @@ setup_logging()
 logger = logging.getLogger(__file__)
 
 
-def identify_part(part) -> tuple[str, Any]:
+def identify_part(part) -> dict[str, Any]:
     """
     Identify which part of the metadata is contained.
     """
-    match = re.match(r"Necromancer\s*(\d)", part)
+    match = re.match(r"([-\w\s]+)(\d)", part)
     if match:
-        level = int(match.group(1))
-        return "level", level
+        _class = match.group(1).strip()
+        level = int(match.group(2))
+        return {"level": level, "class": _class}
 
     if cleaned := part.strip():
-        return "name", cleaned
+        return {"name": cleaned}
 
-    return "", None
+    return {}
 
 
 def main():
@@ -39,7 +40,7 @@ def main():
     Main function.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", help="Path to the Necromancer supplement")
+    parser.add_argument("input", help="Path to the supplement")
     parser.add_argument("output", help="Path to save json output")
     args = parser.parse_args()
 
@@ -108,9 +109,8 @@ def main():
             has_metadata = True
 
         if has_metadata:
-            key, value = identify_part(parts[0])
-            if key:
-                current_spell[key] = value
+            metadata = identify_part(parts[0])
+            current_spell.update(metadata)
 
             has_metadata = False
             continue
@@ -129,7 +129,7 @@ def main():
     spells.append(current_spell)
 
     for spell in spells:
-        keys = ["name", "range", "duration", "level", "description"]
+        keys = ["name", "range", "duration", "level", "description", "class"]
         for key in keys:
             if key not in spell:
                 name = spell.get("name", "unknown")
