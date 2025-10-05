@@ -1,7 +1,6 @@
 import argparse
 import logging
 import re
-from textwrap import indent
 
 import json
 from typing import Any
@@ -12,6 +11,8 @@ from xml_utils import (
     prune_empty_elements,
     get_recursive_text,
     concat_text_parts,
+    ODTStyleParser,
+    convert_table_to_html,
 )
 
 setup_logging()
@@ -48,6 +49,9 @@ def main():
     body = root.getElementsByTagName("office:body")[0]
     text = body.getElementsByTagName("office:text")[0]
     children = text.childNodes
+
+    style_parser = ODTStyleParser()
+    style_parser.parse_styles(dom)
 
     # this is the child with all relevant content for spells
     content_node = children[6]
@@ -115,8 +119,12 @@ def main():
         if "description" not in current_spell:
             current_spell["description"] = []
 
-        p = f"<p>{child_text}</p>"
-        current_spell["description"].append(p)
+        if _child.nodeName == "table:table":
+            desc_item = convert_table_to_html(_child, style_parser)
+        else:
+            desc_item = f"<p>{child_text}</p>"
+
+        current_spell["description"].append(desc_item)
 
     spells.append(current_spell)
 

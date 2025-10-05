@@ -11,105 +11,12 @@ from typing import Optional, Any
 from xml.dom.minidom import parseString, Element, Node
 import argparse
 
+from xml_utils import ODTStyleParser
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
-
-
-class ODTStyleParser:
-    """Parses ODT style definitions and converts them to HTML equivalents."""
-
-    def __init__(self):
-        self.style_map = {}
-
-    def parse_styles(self, dom):
-        """Extract style definitions from ODT document."""
-        # Get automatic styles
-        auto_styles = dom.getElementsByTagName("office:automatic-styles")
-        if auto_styles:
-            self._parse_style_section(auto_styles[0])
-
-        # Get document styles if present
-        doc_styles = dom.getElementsByTagName("office:styles")
-        if doc_styles:
-            self._parse_style_section(doc_styles[0])
-
-    def _parse_style_section(self, style_section):
-        """Parse a style section (automatic or document styles)."""
-        styles = style_section.getElementsByTagName("style:style")
-
-        for style in styles:
-            style_name = style.getAttribute("style:name")
-            if not style_name:
-                continue
-
-            style_properties = self._extract_style_properties(style)
-            if style_properties:
-                self.style_map[style_name] = style_properties
-
-    def _extract_style_properties(self, style_element):
-        """Extract formatting properties from a style element."""
-        properties = {}
-
-        # Check text properties
-        text_props = style_element.getElementsByTagName("style:text-properties")
-        if text_props:
-            text_prop = text_props[0]
-
-            # Font weight (bold)
-            if text_prop.getAttribute("fo:font-weight") == "bold":
-                properties["bold"] = True
-            if text_prop.getAttribute("style:font-weight-asian") == "bold":
-                properties["bold"] = True
-
-            # Font style (italic)
-            if text_prop.getAttribute("fo:font-style") == "italic":
-                properties["italic"] = True
-            if text_prop.getAttribute("style:font-style-asian") == "italic":
-                properties["italic"] = True
-
-            # Font family
-            font_family = text_prop.getAttribute("style:font-name")
-            if font_family:
-                properties["font_family"] = font_family
-
-            # Font size
-            font_size = text_prop.getAttribute("fo:font-size")
-            if font_size:
-                properties["font_size"] = font_size
-
-        # Check paragraph properties
-        para_props = style_element.getElementsByTagName("style:paragraph-properties")
-        if para_props:
-            para_prop = para_props[0]
-
-            # Text alignment
-            text_align = para_prop.getAttribute("fo:text-align")
-            if text_align:
-                properties["text_align"] = text_align
-
-        return properties
-
-    def get_html_tags(self, style_name: str) -> tuple[str, str]:
-        """Get opening and closing HTML tags for a style."""
-        if style_name not in self.style_map:
-            return "", ""
-
-        properties = self.style_map[style_name]
-        tags = []
-
-        # Convert properties to HTML tags
-        if properties.get("bold"):
-            tags.append("strong")
-        if properties.get("italic"):
-            tags.append("em")
-
-        # Build opening and closing tags
-        opening = "".join(f"<{tag}>" for tag in tags)
-        closing = "".join(f"</{tag}>" for tag in reversed(tags))
-
-        return opening, closing
 
 
 class RulesMonsterExtractor:
