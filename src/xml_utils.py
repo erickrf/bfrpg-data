@@ -1,9 +1,5 @@
-import xml.etree.ElementTree as ET
-from pathlib import Path
-from xml.dom.minidom import parse, parseString
+from xml.dom.minidom import parseString
 import zipfile
-
-from click import style
 
 
 def parse_dom(path: str):

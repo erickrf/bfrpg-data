@@ -49,37 +49,42 @@ def main():
     prune_empty_elements(root)
     body = root.getElementsByTagName("office:body")[0]
     text = body.getElementsByTagName("office:text")[0]
-    children = text.childNodes
 
     style_parser = ODTStyleParser()
     style_parser.parse_styles(dom)
 
-    # this is the child with all relevant content for spells
-    content_node = children[6]
-
-    found_spells = False
     has_metadata = False
+    spell_root_node = None
     spells = []
     current_spell = {}
 
     known_exceptions = ["Protection from Undead*", "Protection from Undead 10' Radius*"]
 
-    content_children = content_node.childNodes
-    for _child in content_children:
+    for _child in text.childNodes:
         child_text_parts = get_recursive_text(_child)
+        child_text = concat_text_parts(child_text_parts)
 
-        if child_text_parts[0] == "DESCRIPTION OF NEW SPELLS":
-            found_spells = True
-            continue
+        if "DESCRIPTION OF NEW SPELLS" in child_text:
+            # this section contains the spell descriptions
+            spell_root_node = _child
+            break
 
-        if not found_spells:
+    if spell_root_node is None:
+        logger.error("Couldn't find spell header")
+        exit()
+
+    for _child in spell_root_node.childNodes:
+
+        child_text_parts = get_recursive_text(_child)
+        child_text = concat_text_parts(child_text_parts)
+
+        if "DESCRIPTION OF NEW SPELLS" == child_text:
             continue
 
         # spells are structured like this:
         # SPELL NAME  Range: RANGE
         # Necromancer LEVEL  Duration: DURATION
         # DESCRIPTION
-        child_text = concat_text_parts(child_text_parts)
 
         if child_text in known_exceptions:
             # a new spell starts here
