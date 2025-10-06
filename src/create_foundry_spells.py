@@ -129,6 +129,8 @@ def main():
             path = output_dir_path / f"{name}.json".replace(" ", "_")
             write_json(path, folder_data)
 
+    written_files = 0
+
     for spell in data:
         if args.level_folders:
             parent = level_ids[spell["level"]]
@@ -138,6 +140,9 @@ def main():
         spell_data = generate_spell_data(spell, parent)
         path = output_dir_path / f'{spell["name"]}.json'.replace(" ", "_")
         write_json(path, spell_data)
+        written_files += 1
+
+    logger.info(f"Wrote {written_files} output files.")
 
 
 if __name__ == "__main__":
