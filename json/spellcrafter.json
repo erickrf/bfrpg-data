@@ -1,0 +1,457 @@
+[
+  {
+    "range": "self",
+    "name": "Activate",
+    "duration": "instantaneous",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the caster to activate a charged magical item in their hands without expending charges or daily uses. The caster must know any activation words required to use the item. This spell will not work on potions. Wands, staves, rods, rings, scrolls, and all other items can be activated by this spell.</p>",
+      "<p>This spell does not allow the caster to use an item forbidden to their class.</p>",
+      "<p>If the power that the caster wants to activate requires 2 charges, it will drain one charge only.</p>"
+    ]
+  },
+  {
+    "range": "20'+10'/level",
+    "name": "Alarm",
+    "duration": "2 hours/level",
+    "level": 1,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>Alarm sounds a mental or audible alarm each time any creature larger than a rat enters the warded area or touches it. A creature that speaks the password (determined by the caster at the time of casting) does not set off the alarm. The caster decides at the time of casting whether the alarm will be mental or audible.</p>",
+      "<p>Mental Alarm: A mental alarm alerts the caster (and only the caster) so long as they remain within 1 mile of the warded area. The caster will hear a single mental “ping” sufficient to awaken the caster from normal sleep, but which does not otherwise disturb concentration. A silence spell has no effect on a mental alarm. </p>",
+      "<p>Audible Alarm: An audible alarm produces the sound of a hand bell, and anyone within 60 feet of the warded area can hear it clearly. Interposing doors or walls may reduce the distance by 10 or 20 feet. The sound lasts for 1 round. Creatures within a silence spell cannot hear the ringing. </p>",
+      "<p>Incorporeal, ethereal, or astrally-projecting creatures do not trigger the alarm.</p>"
+    ]
+  },
+  {
+    "range": "5'",
+    "name": "Analyze Magic",
+    "duration": "Special",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell permits the caster to discover information about a magic item or a permanently enchanted area. For each turn spent studying the enchanted item or area, the caster may learn one feature of the enchantment. Features include spell effects, bonuses, and command words or activating conditions. The GM will choose the order in which the features are revealed, but command words or activating conditions should be last. Note: the number of charges remaining for a charged item is not revealed by this spell.</p>",
+      "<p>Each turn of study requires the caster to make a 1d20 roll, adding their Intelligence bonus and level. The total result must be 16 or higher to succeed; any failure ends the spell. A natural 1 is always a failure.</p>",
+      "<p>The item or area to be studied must be within 5 feet of the caster for the full duration of scrutiny, and they must maintain moderate concentration.</p>",
+      "<p>Even with the best rolls, the caster can only learn about one feature per level of ability. The caster does not initially know how many features an item has, but they know when the last feature is discovered (if the caster makes it that far).</p>",
+      "<p>With respect to bonuses (for magic weapons, etc.) use the following table:</p>",
+      "<table><tr><th></th><th>Bonus</th></tr><tr><td>Description</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr><tr><td>Weak</td><td>1-18</td><td>1</td><td>1</td><td>--</td><td></td></tr><tr><td>Moderate</td><td>19-20</td><td>2-19</td><td>2-7</td><td>1</td><td></td></tr><tr><td>Strong</td><td>--</td><td>20</td><td>8-19</td><td>2-19</td><td>1-2</td></tr><tr><td>Very Strong</td><td>--</td><td>--</td><td>20</td><td>20</td><td>3-20</td></tr></table>",
+      "<p>So, for a Sword +1, +3 vs. Dragons, if the caster makes their first roll (learning about the first feature, the base +1), the GM rolls 1d20 secretly. If the GM gets 1-18, they describe the basic enchantment as \"weak;\" if they get 19 or 20, it's \"moderate.\" If the second roll is made (for the +3 vs. Dragons), the GM rolls again, but this time the most likely result is \"strong\" (or more precisely, \"strongly enchanted against Dragons\"). The caster will know at this point (but not before) that there are no further features to discover.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Break Restrictions",
+    "duration": "1 turn/level",
+    "level": 1,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the use of a magical item not normally usable by the caster, be it a ring, potion, or scroll. This spell does not allow the caster to break their own class restrictions regarding weapons or armor use, even if they are magical items.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Channel Blast",
+    "duration": "instantaneous",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the caster to drain a charged magical item of its energy to cast a bolt of energy. The touched item loses a charge or one daily use of its powers (scrolls and potions are consumed by this spell), allowing the caster to create an energy discharge. The blast is cone shaped, 60 feet long and 40 feet wide at its end.</p>",
+      "<p>The damage inflicted depends on the item drained:</p>",
+      "<p>Potion: 3d6Scroll: 1d6 per level of the spell or 3d6 for non-spell scrollsWand: 4d6Staff: 5d6Rod or ring: 6d6Any other (Miscellaneous magic item, weapon or armor): 4d6</p>",
+      "<p>Targets may save vs. Spells for half-damage.</p>"
+    ]
+  },
+  {
+    "range": "30'",
+    "name": "Charm Constructs",
+    "duration": "special",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the caster to take control of a construct, such as a golem. Control is not absolute and is limited as for the charm person spell; the construct is granted a saving throw to avoid control. The construct is allowed a new saving throw each day to break free of the caster's control. Once control is lost, an unintelligent construct will return to the programming as best as possible. An intelligent construct will know it has been controlled against its will.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Drainblade",
+    "duration": "1 round/level",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell imbues an edged weapon with the ability to drain blood with each successful strike made against a living creature. When a living creature is hit by a drainbladed weapon the target suffers an additional point of damage. If the wielder of the weapon is injured, the extra point of damage is transferred to them as healing energy. In no way can this healing energy grant more hit points than the wielder's normal maximum.</p>",
+      "<p>Against nonliving creatures, such as undead, golems, etc, this spell has no effect.</p>"
+    ]
+  },
+  {
+    "range": "see text",
+    "name": "Dream",
+    "duration": "special",
+    "level": 5,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the caster, or a messenger touched by the caster, to send a recipient a message through the recipient’s dreams. When the spell is cast, the caster must identify the recipient in an unambiguous way. The messenger (whether the caster or someone else) then appears in the recipient’s dream and then delivers the message. The message is purely one-way, and there is no opportunity for questions or interaction. When the recipient wakes up, they will remember the message perfectly.</p>",
+      "<p>After casting the spell, the messenger is helpless and completely unaware of their surroundings until the spell ends. If the recipient is awake when the spell is cast, the messenger can either end the spell immediately or wait until the recipient goes to sleep. Once the recipient goes to sleep, the message can be delivered. Whether the messenger has to wait or not, the messenger immediately becomes fully aware again once the message is delivered. Creatures who do not sleep cannot be a recipient of this spell.</p>"
+    ]
+  },
+  {
+    "range": "Touch",
+    "name": "Enhance Armor*",
+    "duration": "1 turn",
+    "level": 1,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell imparts a +1 bonus to AC to the touched armor or shield as long as the spell lasts. The reverse form (weaken armor) imparts a -1 to AC of the armor touched.</p>",
+      "<p>The reverse form of this spell can be cast in combat and requires a successful attack; the target may deny its effect with a successful saving throw.</p>"
+    ]
+  },
+  {
+    "range": "Touch",
+    "name": "Enhance Weapon*",
+    "duration": "1 turn",
+    "level": 1,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell imparts a +1 bonus to hit and damage to the touched weapon as long as the spell lasts. The reverse form (weaken weapon) imparts a -1 to hit and damage.</p>",
+      "<p>The reverse form of this spell can be cast in combat and requires a successful attack; the target may deny its effect with a successful saving throw.</p>"
+    ]
+  },
+  {
+    "range": "Touch",
+    "name": "Familiar",
+    "duration": "Special",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>With this spell, the caster binds a single animal into their service as a familiar. The creature must be present, and the caster must touch it to cast the spell. Only normal (non-magical) creatures of 1-1 hit die or lower and having animal intelligence may be made into familiars. Further, each spellcaster may have only one familiar at a time. If a familiar dies, the caster will not be able to successfully cast this spell again for 2d6 months (the period to be rolled by the GM and not revealed to the player). A saving throw vs. Spells is allowed to resist, and if this roll succeeds, the animal chosen is not compatible with the caster and cannot become their familiar.</p>",
+      "<p>The familiar will behave as if permanently charmed by its master, and will perform any task assigned to it to the best of its ability. The creature's morale is increased by 2 points (to a maximum of 11), and it receives improved intelligence equal to 3+1d4 points. Familiars normally capable of speech (such as parrots) or sign language (such as monkeys) can even carry on conversations. Familiars also age at half the normal rate for their kind, so a cat familiar (for instance) might easily live forty years.</p>",
+      "<p>The familiar and its master are linked telepathically, allowing normal communication in both directions. The caster can see through the eyes of the familiar with moderate concentration. They can also sense the direction and approximate distance to the familiar (in general terms, such as \"northeast more than a mile away\" or \"south more than a hundred miles and underground\") by concentrating fully upon it for 1d6 rounds.</p>",
+      "<p>The connection between the master and familiar will extend any distance on the same plane, but if they are on different planes, the familiar saves vs. Spells once per week with success meaning it has been freed from the master. The freed familiar loses all benefits gained from this spell and becomes a normal animal. The master is affected as if their familiar has died. If the familiar was well treated by its former master it will be friendly toward them should they meet again, and the master may cast this spell (even if the normal time limit has not expired) to re-bind the animal as their familiar again.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Greater Warding",
+    "duration": "special",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>The spell works similar to minor warding, inflicting 6d6 points of damage. It can be activated by non-living creatures (e.g. golems and undead) as well as living creatures.</p>"
+    ]
+  },
+  {
+    "range": "Anywhere within the area to be warded",
+    "name": "Guards and Wards",
+    "duration": "2 hours/level",
+    "level": 6,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell casts a ward of misdirection and protection on an area of 200 square-feet per caster level. The warded area can be as much as 20 feet high, and shaped as the caster desires. By dividing the area affected, it is possible for this spell to ward several stories of a stronghold.</p>",
+      "<p>The caster must be inside the area to be warded to cast the spell. The spell creates the following magical effects within the warded area:</p>",
+      "<p>Fog: Fog fills all corridors, obscuring all sight, including darkvision, beyond 5 feet. A creature within 5 feet is concealed (missile attacks have a -1 to hit). Creatures farther away are totally concealed (missile attacks have a -4 to hit). </p>",
+      "<p>Wizard Locks: All doors in the warded area are wizard locked.</p>",
+      "<p>Webs: Webs fill all stairs from top to bottom. These strands are identical with those created by the web spell, except that they regrow in 10 minutes if they are burned or torn away while the guards and wards spell lasts.</p>",
+      "<p>Confusion: Where there are choices in direction, such as a corridor intersection or side passage, a minor confusion-type effect functions so as to make it 50% probable that intruders believe they are going in the opposite direction from the one they actually chose. This is an enchantment, mind-affecting effect. </p>",
+      "<p>Lost Doors: One door per caster level is covered by an image to appear as if it were a plain wall. This is saved against as if it was a phantasmal force spell. </p>",
+      "<p>In addition, you can place your choice of one of the following five magical effects:</p>",
+      "<p>Dancing lights in four corridors. You can designate a simple program that causes the lights to repeat as long as the guards and wards spell lasts. A magic mouth in two places. A minor warding in two places. A suggestion in one place. You select an area of up to 5 feet square, and any creature who enters or passes through the area receives the suggestion mentally. A sleep in two places. You select an area of up to 5 feet square, and any creature who enters or passes through the area triggers the sleep spell.</p>",
+      "<p>The whole warded area radiates strong magic. A dispel magic cast on a specific effect, if successful, removes only that effect.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Hardness*",
+    "duration": "1 turn/level",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell imbues the touched item or construct with one point of Hardness for every two levels of the caster.</p>",
+      "<p>The item may not be larger than 10 cubic feet plus 1 cubic foot per level of the caster.</p>",
+      "<p>The reverse form (weaken) subtracts as many points of Hardness. If the target item is reduced below 0 Hardness, excess negative Hardness is inflicted as damage points.</p>"
+    ]
+  },
+  {
+    "range": "25’",
+    "name": "Heat Metal*",
+    "duration": "7 rounds",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell causes a single item made of ferrous (iron-based) metal to become hot for a brief period of time. The affected item is warm to the touch immediately, and then becomes progressively hotter each round as indicated on the table below. The damage roll indicated is applied to any creature holding or wearing the affected item; a brief touch does no damage.</p>",
+      "<table><tr><th><strong>Round</strong></th><th><strong>Temperature</strong></th><th><strong>Damage</strong></th></tr><tr><td>1st</td><td>Warm</td><td>None</td></tr><tr><td>2nd-3rd</td><td>Hot</td><td>1d4 points</td></tr><tr><td>4th-5th</td><td>Searing</td><td>2d4 points</td></tr><tr><td>6th</td><td>Hot</td><td>1d4 points</td></tr><tr><td>7th</td><td>Warm</td><td>None</td></tr></table>",
+      "<p>Note that this spell can damage items harmed by heat, such as potions for example, and might boil water, wine, or oil stored in vessels within an affected metal item, possibly causing the affected vessel to burst. Generally this will happen on the 4th or 5th round, when the effect is at its most powerful.</p>",
+      "<p>The reverse of this spell is chill metal. It inflicts damage as outlined in the table above, but the damage is caused by cold instead of heat. Note that this can freeze water, congeal oil, and so on. Frozen water might burst its vessel.</p>"
+    ]
+  },
+  {
+    "range": "180'",
+    "name": "Hold Construct",
+    "duration": "2d8 turns",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell has the same effects of hold person but only affects constructs such as golems.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Immunity to Normal Weapons",
+    "duration": "5 rounds+1/level",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell temporarily makes the target immune to non-magical weapons. Anyone under the protection of this spell is treated as an enchanted creature for the purpose of magic items (for instance, a Sword +1, +2 vs. Enchanted Creatures).</p>"
+    ]
+  },
+  {
+    "range": "self",
+    "name": "Lord of the Rings",
+    "duration": "1 turn/level",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>For the duration of the spell the caster can wear and benefit from up to four magical rings. Magical rings of the same type do not stack their effects (i.e. two Rings of Protection do not grant a +2 bonus to AC).</p>"
+    ]
+  },
+  {
+    "range": "10’",
+    "name": "Magic Mirror",
+    "duration": "1 round/level",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>Turns a reflective surface within range into a magic mirror through which the caster can view other creatures. The caster must know and name the creature. The caster and any other creatures viewing the mirror will be able to see the images, but only the caster will hear sound from the viewing. Detection and vision spells can be cast into it with a 3% chance per caster level of success. If successful, this allows the caster to cast detect magic, see invisible, etc through the mirror.</p>"
+    ]
+  },
+  {
+    "range": "self",
+    "name": "Major Spell Immunity",
+    "duration": "1 round/level",
+    "level": 6,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell works like minor spell immunity, except that the caster is immune to 1st and 2nd-level spells, and reduces by half the spell effects of 3rd and 4th-level spells.</p>"
+    ]
+  },
+  {
+    "name": "Mass Armor Enhancement*",
+    "range": "special",
+    "level": 4,
+    "class": "Spellcrafter",
+    "duration": "1 turn",
+    "description": [
+      "<p>The caster can affect with enhance armor up to 3 armor sets within 30 feet with a +1 bonus for every three levels of the caster. </p>",
+      "<p>The reverse of this spell imparts a -1 to AC to affected armor sets and can be avoided with a saving throw.</p>"
+    ]
+  },
+  {
+    "name": "Mass Weapon Enhancement*",
+    "range": "special",
+    "level": 4,
+    "class": "Spellcrafter",
+    "duration": "1 turn",
+    "description": [
+      "<p>The caster can affect with enhance weapon up to 3 weapons within 30 feet with a +1 bonus for every three levels of the caster..</p>",
+      "<p>The reverse of this spell imparts a -1 to hit and damage rolls to affected weapons and can be avoided with a saving throw.</p>"
+    ]
+  },
+  {
+    "range": "self",
+    "name": "Minor Creation",
+    "duration": "instantaneous",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell creates a non-magical object of non-living matter. The volume of the item created cannot exceed 1 cubic foot per caster level. The item produced by this spell may not be a special component to be used in spell research like a dragon's liver or troll blood.</p>"
+    ]
+  },
+  {
+    "range": "self",
+    "name": "Minor Spell Immunity",
+    "duration": "1 round/level",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell creates a 1-inch-thick green translucent shell around the caster that protects them from the effects of low-level spells, whether they are harmful or beneficial in nature. The caster is immune to the effects of all 1st-level spells and reduces by half (round in favor of the protected creature) the effects of 2nd and 3rd-level spells, both clerical and magical. The caster's own spells are unaffected by the shell and they can at will lower the protection of the shell for 1 round at a time to receive spells from others (like magical healing). At the end of the round, the shell automatically springs back up again.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Minor Warding",
+    "duration": "1 hour/level",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell cloaks an object of less than 10 cubic feet with an invisible aura of harmful energy. Thereafter, the first living creature touching the object sets off the ward, receiving 3d6 points of damage. No saving throw is allowed to avoid the damage. The object is unaffected by the discharge of the minor ward.</p>",
+      "<p>Non-living creatures, such as undead or golems, will not set off a minor ward. The caster is free to handle the object at will. The maximum duration of the spell is 1 hour per level of the caster.</p>"
+    ]
+  },
+  {
+    "range": "400’",
+    "name": "Move Earth",
+    "duration": "1 round/level",
+    "level": 6,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell moves dirt (clay, loam, sand), possibly collapsing embankments, moving hillocks, shifting dunes, and so forth. However, in no event can rock formations be collapsed or moved. The spell can move up to one 150 feet square (up to 10 feet deep) per round. </p>",
+      "<p>This spell does not violently break the surface of the ground. Instead, it creates wavelike crests and troughs, with the earth reacting with glacier-like fluidity until the desired result is achieved. Trees, structures, rock formations, and such are mostly unaffected except for changes in elevation and relative topography.</p>",
+      "<p>The spell cannot be used for tunneling and is generally too slow to trap or bury creatures. Its primary use is for digging or filling moats or for adjusting terrain contours before a battle.</p>",
+      "<p>This spell has no effect on earth creatures.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Neutralize Potion",
+    "duration": "instantaneous",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell will render a potion touched by the caster inert and non-magical. Touching a person under the effects of a potion immediately dispels the potion’s effects. An attack roll is required to touch an unwilling target.</p>",
+      "<p>In addition this spell can function as neutralize poison (though it cannot be reversed).</p>"
+    ]
+  },
+  {
+    "range": "30'",
+    "name": "Overtake Item",
+    "duration": "instantaneous",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>With this spell the caster can activate one magical item not in their possession that they are aware of and within range. The item must be in plain sight for the caster to see; if the item is held or owned by someone else the owner is allowed a saving throw vs. Spells to avoid the item's activation.</p>"
+    ]
+  },
+  {
+    "range": "10'",
+    "name": "Permanency",
+    "duration": "permanent",
+    "level": 6,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell is used to make another spell of 6th or lower level permanent. Only arcane magic can be affected: Clerical, Druidic, and other spells of divine nature can not be made permanent. No spell with a permanent or instantaneous duration can be made permanent.</p>",
+      "<p>A permanency spell lasts until dispelled. When it is dispelled, the other spell effect vanishes immediately. Casting a permanency spell causes the loss of 1 point of Constitution. Lost Constitution is recovered using the Constitution Point Losses rules from the Basic Fantasy RPG Core Rules.</p>",
+      "<p>No more than two spells can be made permanent on a single person, item or place. If a third permanency spell is cast it automatically fails, and there is a 50% that each of the two other permanency spells fails too.</p>",
+      "<p>A permanency spell is not necessary to make any magical item; using permanency to bind a spell to an object, person, or place is not the same as crafting a magic item.</p>",
+      "<p>Spells that are commonly made permanent on a creature: detect magic, protection from evil, read languages, read magic, detect invisible, and fly. </p>",
+      "<p>Spells commonly made permanent on items or locations include: alarm, animate objects, confusion, dancing lights, guards and wards, invisibility, phantasmal force, private sanctum, magic mouth, symbol, wall of fire, and web.</p>"
+    ]
+  },
+  {
+    "range": "30’",
+    "name": "Private Sanctum",
+    "duration": "24 hours",
+    "level": 5,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell creates a field impenetrable to most kinds of scrutiny. Those looking into the area from outside see only a dark, foggy mass. Darkvision cannot penetrate it. Eavesdroppers do not perceive any sound, no matter how loud, emanating from the area. Those inside the affected area can see and hear outside the affected area normally. Anyone inside the affected area are immune to ESP spells.</p>",
+      "<p>Divination spells like magic mirror, clairvoyance, and clairaudiance cannot perceive anything within the area.</p>",
+      "<p>No speech is possible between those inside and those outside the sanctum. The spell does not prevent other means of communication, such as telepathic communication, or such as that between a Magic-User and a familiar. </p>",
+      "<p>Private sanctum does not stop creatures or objects from moving into and out of the area. </p>"
+    ]
+  },
+  {
+    "range": "Touch",
+    "name": "Protection From Lightning",
+    "duration": "special",
+    "level": 4,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>If the caster touches themself, this spell grants temporary immunity to lightning or electrical effects (normal and magic). When the spell absorbs 12 points per caster level of magical lightning damage, it is discharged. Otherwise the spell lasts for 1 turn per caster level.</p>",
+      "<p>If the spell is cast upon another creature than the caster, protection from lightning grants temporary immunity against normal lightning or electrical effects. The spell also offers a +4 bonus to saving throws against magical lightning and if the save is successful, the creature suffers no damage (and only 25% if the save fails). This version of the spell lasts for 1 turn per caster level.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Repair*",
+    "duration": "instantaneous",
+    "level": 1,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>With this spell the caster repairs 1d6+1 points of damage by laying their hand upon the broken item, be it a vehicle, golem, etc.</p>",
+      "<p>The reverse form of this spell (shrivel) causes 1d6+1 points of damage to the object affected by it, ignoring hardness. If the target is animated (e.g. a golem), a successful attack roll is required in this case.</p>",
+      "<p>This spell has no effect on living creatures, it will shatter small items, and if the target is a magic item, it gets to roll a saving throw vs. Spells at +4.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Retrieve Energy",
+    "duration": "instantaneous",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the caster to drain a charged magical item of its energy to cast a spell. The touched item loses a charge or one daily use of its powers (scrolls and potions are consumed by this spell), allowing the caster to retain its energy.</p>",
+      "<p>In the following round the caster can cast any spell they have memorized without expending the spell slot. The maximum level that can be cast depends on the item drained:</p>",
+      "<p>Potion: up to 2nd levelScroll: up to level of the spell or 3rd level for non-spell scrollsWand: up to 3rd levelStaff: up to 4th levelRod or ring: up to 5th levelAny other (miscellaneous magic item, weapon or armor): up to 3rd level</p>",
+      "<p>If no spell is cast in the round immediately following the casting of this spell, the retrieved energy is lost.</p>"
+    ]
+  },
+  {
+    "range": "150’",
+    "name": "Rock to Mud*",
+    "duration": "permanent",
+    "level": 5,
+    "class": "Spellcaster",
+    "description": [
+      "<p>This spell turns natural, uncut or un-worked rock of any sort into an equal volume of mud; up to two 10-foot cubes per caster level may be so transformed. Magical stone is not affected by this spell. The depth of the mud created cannot exceed 10 feet. A creature unable to levitate, fly, or otherwise free itself from the mud sinks until hip- or chest-deep, reducing its speed to 5' and causing it to suffer a ‑2 penalty to attack rolls, saving throws, and armor class. Creatures large enough to walk on the bottom can wade through the area at a speed of 5', suffering none of the other penalties given.</p>",
+      "<p>If rock to mud is cast upon the ceiling of a cavern or tunnel, the mud falls to the floor and spreads out in a pool to a depth of 5 feet. The falling mud and the ensuing cave-in deal 8d6 points of damage to anyone caught directly beneath the area, or half damage to those who succeed a save vs. Death Ray.</p>",
+      "<p>Castles and large stone buildings are generally immune to the effect of the spell, since rock to mud cannot affect worked stone and doesn’t reach deep enough to undermine such a buildings’ foundation. However, small buildings or structures often rest upon foundations shallow enough to be damaged or even partially-toppled by this spell.</p>",
+      "<p>The mud remains until a successful dispel magic or mud to rock spell restores its substance (though not necessarily its form). Evaporation turns the mud to normal dirt over a period of days. The exact time depends on exposure to the sun, wind, and normal drainage.</p>",
+      "<p>When using the reverse, mud to rock, the spell converts the same volume of mud into relatively soft stone (such as limestone or sandstone) permanently. Any creature in the mud must save vs. Death Ray to escape before the area transforms into rock (assuming it has enough movement to do so).</p>"
+    ]
+  },
+  {
+    "range": "see text",
+    "name": "Secret Chest",
+    "duration": "60 days",
+    "level": 5,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell hides a chest in an extra-dimensional space for as long as 60 days. Regardless of the chest’s actual size, (which is about 3- by 2- by 2 feet) it can contain up to 1 cubic-foot of material per caster level. The caster can retrieve the chest at will by a simple act of will; the chest will appear beside the caster. If any living creatures are in the chest, there is a 75% chance that the spell simply fails.</p>",
+      "<p>After 60 days, there is a cumulative chance of 5% per day that the chest is irretrievably lost. Living things in the chest eat, sleep, and age normally, and they die if they run out of food, air, water, or whatever else they need to survive.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Serious Repair*",
+    "duration": "instantaneous",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell repairs 2d6+1 points of damage by laying their hand upon the injured item, be it a vehicle, golem, etc.</p>",
+      "<p>The reverse form of this spell (serious shrivel) causes 2d6+1 points damage to the object affected by it, ignoring hardness. If the target is animated (e.g. a golem), a successful attack roll is required in this case.. </p>",
+      "<p>This spell has no effect on living creatures, it will shatter small items, and if the target is a magic item, it gets to roll a saving throw vs. Spells.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Starlight Blade",
+    "duration": "1 round/level",
+    "level": 5,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>When cast upon a weapon, starlight blade enhances its abilities against undead creatures of all types. The weapon immediately begins to glow with a silvery radiance and with each stroke leaves a trail of white sparkles, like stars in the night sky. Any undead creature struck suffers an additional 1d6+1 points of damage. In addition, the wielder of the weapon may roll to Turn the creature as if a 5th-level Cleric. Contrary to this spell's name, starlight blade works equally well on any type of weapon.</p>"
+    ]
+  },
+  {
+    "range": "touch",
+    "name": "Stone Shape",
+    "duration": "instantaneous",
+    "level": 3,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>This spell allows the caster to shape, bend, and form an existing piece of stone (of up to 10 cubic feet + 1 cubic foot per level) into any shape they wish.</p>",
+      "<p>Fine detail is not possible but primitive doors, walls, bridges, or similar items can be created with this spell. Stone shaped in the form of moving or mechanical parts will not work on a roll of 1-2 on 1d6.</p>"
+    ]
+  },
+  {
+    "range": "50’",
+    "name": "Warp Wood*",
+    "duration": "instantaneous",
+    "level": 2,
+    "class": "Spellcrafter",
+    "description": [
+      "<p>The caster causes non-magical wood in a 20-foot radius to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open or becomes stuck; a boat or ship springs a leak; warped weapons (like bows and arrows) are useless. The caster may warp wood object(s) up to 1 foot on all sides per caster level.</p>",
+      "<p>Alternatively, the caster can “un-warp” non-magical wood (effectively warping it back to normal), straightening wood that has been warped by this spell or by other means. The caster can combine multiple consecutive warp wood spells to warp (or un-warp) an object that is too large to warp with a single spell.</p>"
+    ]
+  }
+]
