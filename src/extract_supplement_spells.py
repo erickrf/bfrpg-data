@@ -73,12 +73,18 @@ def main():
         logger.error("Couldn't find spell header")
         exit()
 
+    found_spell_list = False
+
     for _child in spell_root_node.childNodes:
 
         child_text_parts = get_recursive_text(_child)
         child_text = concat_text_parts(child_text_parts)
 
         if "DESCRIPTION OF NEW SPELLS" == child_text:
+            found_spell_list = True
+            continue
+
+        if not found_spell_list:
             continue
 
         # spells are structured like this:
