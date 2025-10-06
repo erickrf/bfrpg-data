@@ -51,9 +51,11 @@ def get_recursive_text(node) -> list[str | list[str]]:
 
     for child in node.childNodes:
         if child.nodeType == child.TEXT_NODE:
-            content = child.data.strip()
+            content = child.data
         elif child.nodeType == child.ELEMENT_NODE:
             content = get_recursive_text(child)
+        else:
+            continue
 
         if content:
             text_parts.append(content)

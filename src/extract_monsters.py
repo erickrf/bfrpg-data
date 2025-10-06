@@ -104,7 +104,6 @@ class MonsterExtractor:
 
         main_section = sections[1]
 
-        # Remove empty elements first (from your notebook)
         self._prune_empty_elements(main_section)
 
         monster_data = {}
