@@ -35,7 +35,7 @@ def generate_folder_structure(name, parent_id: str | None = None) -> dict[str, A
     return data
 
 
-def generate_spell_data(spell_data, parent_id: str | None = None):
+def generate_spell_data(spell_data, icon_path: str, parent_id: str | None = None):
     """
     Generate the structure for the json import out of the existing json input.
     """
@@ -64,7 +64,7 @@ def generate_spell_data(spell_data, parent_id: str | None = None):
                 "label": "BASICFANTASYRPG.SpellLevel",
             },
         },
-        "img": "icons/sundries/scrolls/scroll-symbol-triangle-brown.webp",
+        "img": icon_path,
         "_key": f"!items!{_id}",
     }
 
@@ -92,6 +92,11 @@ def main():
     )
     parser.add_argument(
         "output_dir", help="Output directory to write individual json files"
+    )
+    parser.add_argument(
+        "--icon",
+        help="Custom spell icon (path inside Foundry)",
+        default="icons/sundries/scrolls/scroll-writing-white.webp",
     )
     args = parser.parse_args()
     utils.setup_logging()
@@ -137,7 +142,7 @@ def main():
         else:
             parent = parent_id
 
-        spell_data = generate_spell_data(spell, parent)
+        spell_data = generate_spell_data(spell, args.icon, parent)
         path = output_dir_path / f'{spell["name"]}.json'.replace(" ", "_")
         write_json(path, spell_data)
         written_files += 1

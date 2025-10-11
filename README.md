@@ -7,15 +7,9 @@ Its main purpose is to generate data compatible with Foundry VTT.
 
 # Running Scripts
 
-## Input File
+## Monsters
 
 The scripts were written for the [Field Guide Omnibus r4](https://basicfantasy.org/downloads.html) file and the [Core Rules 4th Edition](https://basicfantasy.org/downloads.html). 
-
-Hopefully future versions will still be compatible.
-
-## Scripts
-
-### Monsters
 
 - `extract_monsters.py` extracts a rough JSON file from the Field Guide
 - `extract_monsters_core.py` extracts a similar JSON from the Core Rules
@@ -30,10 +24,16 @@ Hopefully future versions will still be compatible.
 - `create_foundry_monsters.py` creates individual JSON files that can later be imported to 
   Foundry with `fvtt`.
 
-### Supplement Spells
+## Supplement Spells
 
-- `extract_supplement_spells.py`; tested only with necromancer
+- `extract_supplement_spells.py`; tested with necromancer, spellcrafter and illusionist
 - `create_foundry_spells.py` generates files to be imported to a compendium
+
+Notes on spell icons used: 
+
+- Necromancer: `icons/sundries/scrolls/scroll-symbol-triangle-brown.webp`
+- Spellcrafter: `icons/sundries/scrolls/scroll-symbol-circle-white.webp`
+- Illusionist: `icons/sundries/scrolls/scroll-symbol-eye-blue.webp`
 
 # License
 
